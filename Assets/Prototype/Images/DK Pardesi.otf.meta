@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c22b5fdfcab77b646a782b4cd3fbc0d0
+timeCreated: 1529307347
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DK Pardesi
+  fontNames:
+  - DK Pardesi
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

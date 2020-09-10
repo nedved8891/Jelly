@@ -1,0 +1,48 @@
+
+Pillar2.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 10, 276
+  size: 257, 172
+  orig: 257, 172
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 10, 61
+  size: 102, 114
+  orig: 102, 114
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 277, 306
+  size: 91, 82
+  orig: 91, 82
+  offset: 0, 0
+  index: -1
+4
+  rotate: true
+  xy: 220, 200
+  size: 66, 46
+  orig: 66, 46
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 10, 185
+  size: 200, 81
+  orig: 200, 81
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 277, 398
+  size: 171, 50
+  orig: 171, 50
+  offset: 0, 0
+  index: -1

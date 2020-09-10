@@ -1,0 +1,48 @@
+
+Pillar.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Pillar1/1
+  rotate: false
+  xy: 10, 345
+  size: 258, 113
+  orig: 258, 113
+  offset: 0, 0
+  index: -1
+Pillar1/2
+  rotate: false
+  xy: 10, 259
+  size: 110, 76
+  orig: 110, 76
+  offset: 0, 0
+  index: -1
+Pillar1/3
+  rotate: false
+  xy: 10, 177
+  size: 82, 72
+  orig: 82, 72
+  offset: 0, 0
+  index: -1
+Pillar1/4
+  rotate: false
+  xy: 392, 412
+  size: 66, 46
+  orig: 66, 46
+  offset: 0, 0
+  index: -1
+Pillar1/5
+  rotate: false
+  xy: 278, 389
+  size: 104, 69
+  orig: 104, 69
+  offset: 0, 0
+  index: -1
+Pillar1/6
+  rotate: false
+  xy: 130, 294
+  size: 76, 41
+  orig: 76, 41
+  offset: 0, 0
+  index: -1

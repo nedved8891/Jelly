@@ -1,0 +1,139 @@
+
+JellyMain.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 10, 420
+  size: 368, 454
+  orig: 368, 454
+  offset: 0, 0
+  index: -1
+CloseEye
+  rotate: false
+  xy: 665, 1552
+  size: 130, 191
+  orig: 130, 191
+  offset: 0, 0
+  index: -1
+HalfCloseEye
+  rotate: false
+  xy: 10, 219
+  size: 130, 191
+  orig: 130, 191
+  offset: 0, 0
+  index: -1
+HandL
+  rotate: false
+  xy: 150, 298
+  size: 114, 112
+  orig: 114, 112
+  offset: 0, 0
+  index: -1
+HandR
+  rotate: false
+  xy: 805, 1608
+  size: 136, 135
+  orig: 136, 135
+  offset: 0, 0
+  index: -1
+Hat1
+  rotate: false
+  xy: 665, 1753
+  size: 542, 285
+  orig: 542, 285
+  offset: 0, 0
+  index: -1
+Hat2
+  rotate: false
+  xy: 10, 884
+  size: 542, 285
+  orig: 542, 285
+  offset: 0, 0
+  index: -1
+Hat3
+  rotate: false
+  xy: 10, 1179
+  size: 567, 304
+  orig: 567, 304
+  offset: 0, 0
+  index: -1
+Hat4
+  rotate: false
+  xy: 10, 1493
+  size: 645, 545
+  orig: 645, 545
+  offset: 0, 0
+  index: -1
+Hat5
+  rotate: false
+  xy: 1217, 1769
+  size: 464, 269
+  orig: 464, 269
+  offset: 0, 0
+  index: -1
+LegL
+  rotate: false
+  xy: 388, 572
+  size: 110, 106
+  orig: 110, 106
+  offset: 0, 0
+  index: -1
+LegR
+  rotate: false
+  xy: 10, 87
+  size: 119, 122
+  orig: 119, 122
+  offset: 0, 0
+  index: -1
+Mouth1
+  rotate: false
+  xy: 1691, 1923
+  size: 182, 115
+  orig: 182, 115
+  offset: 0, 0
+  index: -1
+Mouth2
+  rotate: false
+  xy: 951, 1681
+  size: 50, 62
+  orig: 50, 62
+  offset: 0, 0
+  index: -1
+Mouth3
+  rotate: false
+  xy: 1691, 1879
+  size: 136, 34
+  orig: 136, 34
+  offset: 0, 0
+  index: -1
+Mouth4
+  rotate: true
+  xy: 587, 1326
+  size: 157, 60
+  orig: 157, 60
+  offset: 0, 0
+  index: -1
+OpenEye
+  rotate: false
+  xy: 388, 688
+  size: 132, 186
+  orig: 132, 186
+  offset: 0, 0
+  index: -1
+Pupil
+  rotate: false
+  xy: 1995, 1963
+  size: 43, 75
+  orig: 43, 75
+  offset: 0, 0
+  index: -1
+Tongue
+  rotate: false
+  xy: 1883, 1984
+  size: 102, 54
+  orig: 102, 54
+  offset: 0, 0
+  index: -1
