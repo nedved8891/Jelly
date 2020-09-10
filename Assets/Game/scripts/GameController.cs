@@ -307,6 +307,13 @@ public class GameController : MonoBehaviour {
 				newColumn = InitPool.Instance.Spawn (GetType(0, 2), nextColumnPosition);
 			}
 
+            ColumnController column = newColumn.GetComponent<ColumnController>();
+
+            if (column.isDestroy)
+            {
+                column.skltn.state.SetAnimation(0, "Idle", true);
+            }
+
 			// Record the first column we land on
 			if ( giveBonus == false )    lastLandedObject = newColumn;
 
