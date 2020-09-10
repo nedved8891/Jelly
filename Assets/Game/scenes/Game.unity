@@ -3937,7 +3937,7 @@ MonoBehaviour:
   - {fileID: 4435507600991786, guid: 23ddfecbc6a9a4146b4daf4837283a91, type: 3}
   - {fileID: 4435507600991786, guid: 23ddfecbc6a9a4146b4daf4837283a91, type: 3}
   - {fileID: 467946, guid: 0ab29c062d5726c4a8711505c33f69c5, type: 3}
-  - {fileID: 4435507600991786, guid: 23ddfecbc6a9a4146b4daf4837283a91, type: 3}
+  - {fileID: 481106, guid: 7cde1fe5b67d9894facc4f5ed7def8e7, type: 3}
   - {fileID: 4435507600991786, guid: 23ddfecbc6a9a4146b4daf4837283a91, type: 3}
   itemRate: 2
   movingColumnChance: 0.5

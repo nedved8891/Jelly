@@ -31,7 +31,15 @@ public class ColumnController : MonoBehaviour {
 	// The vertical movement speed of the column
 	public float moveSpeed = 1;
 
-	void Start()
+    private void OnEnable()
+    {
+        Debug.Log("OnEnable");
+
+        if (skltn)
+            skltn.state.SetAnimation(0, "Idle", false);
+    }
+
+    void Start()
 	{
 		thisTransform = transform;
 

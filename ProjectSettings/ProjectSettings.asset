@@ -159,7 +159,7 @@ PlayerSettings:
     Android: com.TvikGames.Jelly.Christmas.Advanture
   buildNumber: {}
   AndroidBundleVersionCode: 6
-  AndroidMinSdkVersion: 16
+  AndroidMinSdkVersion: 17
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -247,8 +247,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: E:/Unity Projects/Jelly/Key/key.keystore
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: D:/Git/Jelly/Key/key.keystore
+  AndroidKeyaliasName: key
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
