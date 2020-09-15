@@ -157,6 +157,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.TvikGamesStudio.Jelly.Christmas.Advanture
+    Standalone: com.TvikGamesStudio.Jelly.Christmas.Advanture
   buildNumber: {}
   AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 17
@@ -247,7 +248,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/Git/Jelly/Key/key.keystore
+  AndroidKeystoreName: E:/Git/Jelly/Key/key.keystore
   AndroidKeyaliasName: key
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
