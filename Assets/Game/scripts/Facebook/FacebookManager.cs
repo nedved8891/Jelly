@@ -9,7 +9,7 @@ public class FacebookManager : MonoBehaviour
     {
         if (!FB.IsInitialized)
         {
-            FB.Init(InitCallback,OnHideUnity);
+            FB.Init(InitCallback, OnHideUnity);
         }
         else
         {
@@ -22,6 +22,25 @@ public class FacebookManager : MonoBehaviour
         if (FB.IsInitialized)
         {
             FB.ActivateApp();
+
+            if (PlayerPrefs.GetInt("FirstRunApp", 0) == 0)
+            {
+                PlayerPrefs.SetInt("FirstRunApp", 1);
+                FB.Mobile.FetchDeferredAppLinkData(result =>
+                {
+                    AppMetrica.Instance.ReportReferralUrl(result.TargetUrl);
+                    // Process app link data.
+                });
+            }
+            else
+            {
+                FB.GetAppLink(result =>
+                {
+                    AppMetrica.Instance.ReportAppOpen(result.TargetUrl);
+                    // Process app link data
+                    FB.ClearAppLink();
+                });
+            }
         }
     }
 
