@@ -19,8 +19,15 @@ public class MetricaController : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (!Instance)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void Start()
@@ -44,7 +51,6 @@ public class MetricaController : MonoBehaviour
         AppMetrica.Instance.ReportEvent(eventValue,eventParameters);
 
         SendBuffer();
-
 
         //popupWindow.showPopup("Report ("  + eventValue  + " ) + with params");
     }
