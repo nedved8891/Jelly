@@ -762,6 +762,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -784,7 +785,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: 5377c6e3-1357-4d66-88dc-c23343c745eb
   framebufferDepthMemorylessMode: 0
-  projectName: Balloons (1)
+  projectName: Jelly - Christmas Advanture
   organizationId: nedved8891
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

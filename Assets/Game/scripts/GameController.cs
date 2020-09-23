@@ -417,21 +417,27 @@ public class GameController : MonoBehaviour {
 		SceneLoader.Instance.SwitchToScene (Scenes.MainMenu);
 	}
 
-	public void ContinueRewarded(){
-		AdsProvider.Instance.ShowRewardedAd (VideoComplete);
+	public void ContinueRewarded()
+    {
+        isShowingReward = true;
+
+        AdsProvider.Instance.ShowRewardedAd (VideoComplete);
 	}
 
 	private void VideoComplete(bool completed, string advertiser)
 	{
-		if (Advertisements.Instance.debug) {
+        isShowingReward = false;
+
+        if (Advertisements.Instance.debug) {
 			Debug.Log ("Closed rewarded from: " + advertiser + " -> Completed " + completed);
 			GleyMobileAds.ScreenWriter.Write ("Closed rewarded from: " + advertiser + " -> Completed " + completed);
 		}
 
 		if (completed == true)
 		{
-			//user watched the entire video,, he deserves a coin
-			continues ++;
+            MetricaController.Instance.ContinueAdsViewComplete();
+            //user watched the entire video,, he deserves a coin
+            continues ++;
 			Continue ();
 		}
 		else
@@ -701,4 +707,11 @@ public class GameController : MonoBehaviour {
 		// Set the current number of powerups in PlayerPrefs
 		PlayerPrefs.SetInt("TotalPowerups", totalPowerups);
 	}
+
+    bool isShowingReward;
+    void OnApplicationFocus(bool focus)
+    {
+        if(!focus && isShowingReward)
+            MetricaController.Instance.ContinueAdsExit();
+    }
 }
