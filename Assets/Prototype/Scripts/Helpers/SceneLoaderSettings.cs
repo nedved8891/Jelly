@@ -32,10 +32,10 @@ namespace BSH_Prototype
 		not_allowed_small_banner = new List<Scenes> ( ) //list here scenes that shouldn't show ad 
 		{
 			Scenes.InitScene,
-			//Scenes.Logo,
+			Scenes.Logo,
 
 			//Scenes.Game,
-			//Scenes.MainMenu
+			Scenes.MainMenu
 		};
 	}
 

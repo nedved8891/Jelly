@@ -75,7 +75,7 @@ public class AdsProvider : MonoBehaviour {
 	public void ShowBannerAd()
 	{
 		if (Advertisements.Instance.IsBannerAvailable ()) {
-			Advertisements.Instance.ShowBanner (BannerPosition.BOTTOM, BannerType.Banner);
+			Advertisements.Instance.ShowBanner (BannerPosition.TOP, BannerType.Banner);
 		}
 	}
 

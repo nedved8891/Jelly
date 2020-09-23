@@ -118,7 +118,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.8
+  bundleVersion: 1.9
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -159,7 +159,7 @@ PlayerSettings:
     Android: com.TvikGamesStudio.Jelly.Christmas.Advanture
     Standalone: com.TvikGamesStudio.Jelly.Christmas.Advanture
   buildNumber: {}
-  AndroidBundleVersionCode: 9
+  AndroidBundleVersionCode: 10
   AndroidMinSdkVersion: 17
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -689,7 +689,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   scriptingDefineSymbols:
     4: 
-    7: 
+    7: USE_ADMOB
     14: 
   platformArchitecture: {}
   scriptingBackend:
