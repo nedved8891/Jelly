@@ -1364,19 +1364,19 @@ MonoBehaviour:
   hats:
   - colorSprire: {fileID: 21300000, guid: c564ba3e8b4e1dc41bbe4a09df0917c7, type: 3}
     shadowSprite: {fileID: 21300000, guid: e6e7f2ebaa47cb14c807981ad2fe3880, type: 3}
-    costSweet: 5
+    costSweet: 1
   - colorSprire: {fileID: 21300000, guid: 576ccdd23d1e673408cd931726eae03d, type: 3}
     shadowSprite: {fileID: 21300000, guid: 2331c147496b9034296fb110d3f1c621, type: 3}
-    costSweet: 10
+    costSweet: 4
   - colorSprire: {fileID: 21300000, guid: 6f06a31ccdefddb4ab6592560d96e2b0, type: 3}
     shadowSprite: {fileID: 21300000, guid: c3a286f0cc354ef458b8d2d5e1ebbdd4, type: 3}
-    costSweet: 20
+    costSweet: 8
   - colorSprire: {fileID: 21300000, guid: 7344de0a18ed1b1468e7a193c8765907, type: 3}
     shadowSprite: {fileID: 21300000, guid: e436aaaf2c5009e46b64dcbe72ecf6ee, type: 3}
-    costSweet: 30
+    costSweet: 12
   - colorSprire: {fileID: 21300000, guid: c53f2a1ee67e61a40ab34772cdbd739c, type: 3}
     shadowSprite: {fileID: 21300000, guid: 78e9a6de39af5064d91e33b1a389b67f, type: 3}
-    costSweet: 50
+    costSweet: 16
   color: {fileID: 1322241918}
   shadow: {fileID: 1861810955}
 --- !u!1 &269030021

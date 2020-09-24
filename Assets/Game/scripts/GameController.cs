@@ -307,11 +307,17 @@ public class GameController : MonoBehaviour {
 				newColumn = InitPool.Instance.Spawn (GetType(0, 2), nextColumnPosition);
 			}
 
+            if (Random.value < destroyColumnChance)
+            {
+                newColumn.SendMessage("IsDestroy");
+            }
+
             ColumnController column = newColumn.GetComponent<ColumnController>();
 
             if (column.isDestroy)
             {
-                column.skltn.state.SetAnimation(0, "Idle", true);
+                if (column.skltn)
+                    column.skltn.state.SetAnimation(0, "Idle", true);
             }
 
 			// Record the first column we land on
@@ -326,10 +332,6 @@ public class GameController : MonoBehaviour {
 
 			//Should this column give bonus when landed upon?
 			if ( giveBonus == false )    newColumn.SendMessage("NoBonus");
-
-			if (Random.value < destroyColumnChance) {
-				newColumn.SendMessage ("IsDestroy");
-			}
 
 			//Count the rate for an item to appear on a column
 			itemRateCount++;

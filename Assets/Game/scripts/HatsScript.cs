@@ -26,7 +26,7 @@ public class HatsScript : MonoBehaviour {
 		SetIcons ();
 
 		Item.action += Item_action;
-	}
+    }
 
 	void Item_action ()
 	{
@@ -36,8 +36,9 @@ public class HatsScript : MonoBehaviour {
 	void SetIcons(){
 		color.sprite = hats [PlayerPrefs.GetInt ("Hat", 0)].colorSprire;
 		color.fillAmount = 0;
+        //color.fillAmount = PlayerPrefs.GetInt("Tokens", 0) * 1.0f / hats[PlayerPrefs.GetInt("Hat", 0)].costSweet;
 
-		shadow.sprite = hats [PlayerPrefs.GetInt ("Hat", 0)].shadowSprite;
+        shadow.sprite = hats [PlayerPrefs.GetInt ("Hat", 0)].shadowSprite;
 	}
 
 	void SetProgress(){
@@ -47,8 +48,10 @@ public class HatsScript : MonoBehaviour {
 					PlayerPrefs.SetInt ("Hat", PlayerPrefs.GetInt("Hat", 0) + 1);
 					SwitchHat ();
 
-					if (PlayerPrefs.GetInt("Hat", 0) >= 5)
-						PlayerPrefs.SetInt ("Hat", 0);
+                    if (PlayerPrefs.GetInt("Hat", 0) >= 5)
+                    {
+                        PlayerPrefs.SetInt("Hat", 0);
+                    }
 
 					SetIcons();
 				}
