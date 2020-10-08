@@ -97,19 +97,19 @@ MonoBehaviour:
     - platform: 0
       enabled: 1
       appId:
-        id: ca-app-pub-1882635519167023~2705160633
+        id: ca-app-pub-4172665753922211~9672273092
         displayName: App ID
         notRequired: 0
       idBanner:
-        id: ca-app-pub-1882635519167023/5164862509
+        id: ca-app-pub-4172665753922211/7593145912
         displayName: Banner ID
         notRequired: 0
       idInterstitial:
-        id: ca-app-pub-1882635519167023/8740311285
+        id: ca-app-pub-4172665753922211/1207168136
         displayName: Interstitial ID
         notRequired: 0
       idRewarded:
-        id: ca-app-pub-1882635519167023/6168126448
+        id: ca-app-pub-4172665753922211/1987200672
         displayName: Rewarded Video ID
         notRequired: 0
       hasBanner: 1

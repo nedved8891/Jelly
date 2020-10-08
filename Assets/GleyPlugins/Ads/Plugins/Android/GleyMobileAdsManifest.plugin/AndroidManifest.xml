@@ -2,6 +2,6 @@
 <manifest xmlns:android = "http://schemas.android.com/apk/res/android"
 package="com.gley.mobileads">
 <application>
-<meta-data android:name = "com.google.android.gms.ads.APPLICATION_ID" android:value = "ca-app-pub-1882635519167023~2705160633" />
+<meta-data android:name = "com.google.android.gms.ads.APPLICATION_ID" android:value = "ca-app-pub-4172665753922211~9672273092" />
 </application>
 </manifest>
