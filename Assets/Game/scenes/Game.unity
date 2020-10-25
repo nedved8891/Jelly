@@ -3916,6 +3916,7 @@ GameObject:
   - component: {fileID: 1451659489}
   - component: {fileID: 1451659488}
   - component: {fileID: 1451659491}
+  - component: {fileID: 1451659492}
   m_Layer: 0
   m_Name: '[ Scripts ]'
   m_TagString: GameController
@@ -4164,6 +4165,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1451659492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451659487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c155053cc9b394986617a6d90ed561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastTime: 20
+  delayShow: 90
+  deleyHide: 15
+  visible: 0
 --- !u!1001 &1504812388
 PrefabInstance:
   m_ObjectHideFlags: 0
