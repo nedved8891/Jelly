@@ -23,16 +23,18 @@ public class AdsProvider : MonoBehaviour {
 	[Header("Час між показами реклами")]
 	public Delay delay;
 
-	float currentTime;
+	private float currentTime;
+		
+	public bool isShowingInterstitial = false;
 
 	/// <summary>
 	/// Awake метод
 	/// </summary>
-	void Awake(){
+	private void Awake(){
 		Instance = this;
 	}
 
-	void Start()
+	private void Start()
 	{
 		//if user consent was set, just initialize the sdk, else request user consent
 		if (Advertisements.Instance.UserConsentWasSet ()) {
@@ -48,7 +50,7 @@ public class AdsProvider : MonoBehaviour {
 
 	}
 
-	bool isDelayed(){
+	private bool isDelayed(){
 		if (currentTime + (int)delay < Time.time){
 			currentTime = Time.time;
 			return true;
@@ -63,7 +65,7 @@ public class AdsProvider : MonoBehaviour {
 	/// </summary>
 	public void OnScreenObscured ()
 	{
-		Scenes current_scene = SceneManager.GetActiveScene ( ).name.ToEnum<Scenes> ( );
+		var current_scene = SceneManager.GetActiveScene ( ).name.ToEnum<Scenes> ( );
 		AudioController.Release( );
 		//ShowRateUs ( current_scene ); //call before other Scene dependent methods - can override target scene
 		SceneLoader.Instance.CheckBigBanner ( current_scene );
@@ -98,7 +100,9 @@ public class AdsProvider : MonoBehaviour {
 	/// </summary>
 	public void ShowInterstitialAd()
 	{
-		if (Advertisements.Instance.IsInterstitialAvailable () && isDelayed ()) {
+		if (Advertisements.Instance.IsInterstitialAvailable () && isDelayed ())
+		{
+			isShowingInterstitial = true;
 			Advertisements.Instance.ShowInterstitial (InterstitialClosed);
 		} else {
 			Debug.Log ("@@@ Міжсторінкова реклама недоступна, просто перейдем на наступну сцену");
@@ -124,7 +128,11 @@ public class AdsProvider : MonoBehaviour {
 			Debug.Log("Interstitial closed from: " + advertiser + " -> Resume Game ");
 			GleyMobileAds.ScreenWriter.Write("Interstitial closed from: " + advertiser + " -> Resume Game ");
 		}
-
+		
+		MetricaController.Instance.InterstitialAdsViewSuccess();
+		
+		isShowingInterstitial = true;
+		
 		SceneLoader.Instance.LoadScene ();
 	}
 

@@ -154,4 +154,28 @@ public class MetricaController : MonoBehaviour
 
         SendBuffer();
     }
+    
+    /// <summary>
+    /// успешно посмотрел рекламу за продолжение игры
+    /// </summary>
+    public void InterstitialAdsViewSuccess()
+    {
+        eventValue = "interstitial_ads_view_success";
+
+        AppMetrica.Instance.ReportEvent(eventValue);
+
+        SendBuffer();
+    }
+   
+    /// <summary>
+    /// сворачивание приложения/выход на межстраничной рекламе после проигрыша
+    /// </summary>
+    public void  InterstitialAdsFail()
+    {
+        eventValue = " interstitial_ads_fail";
+
+        AppMetrica.Instance.ReportEvent(eventValue);
+
+        SendBuffer();
+    }
 }

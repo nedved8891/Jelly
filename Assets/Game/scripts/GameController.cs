@@ -101,6 +101,8 @@ public class GameController : MonoBehaviour {
 	public Text textGameOver;
 	public Text textHighScore;
 	public Text textScore;
+	
+	public Button bttnContinue;
 
 	[Header("Нижня межа по (Y), щоб сказати чи помер персонаж")]
 	public float deathLineHeight = -2;
@@ -479,12 +481,16 @@ public class GameController : MonoBehaviour {
 		if ( continues > 0 ) 
 		{
 			// Deactivate the continues object if we have no more continues
-			if ( gameOverCanvas )    gameOverCanvas.Find("ButtonContinue").gameObject.SetActive(true);
+			if ( gameOverCanvas )
+				if (bttnContinue != null)
+					bttnContinue.gameObject.SetActive(true);
 		}
 		else
 		{
 			// Activate the continues object if we have no more continues
-			if ( gameOverCanvas )    gameOverCanvas.Find("ButtonContinue").gameObject.SetActive(false);
+			if ( gameOverCanvas )
+				if (bttnContinue != null)
+					bttnContinue.gameObject.SetActive(false);
 		}
 	}
 
@@ -506,7 +512,7 @@ public class GameController : MonoBehaviour {
 	/// Встановлення очків
 	/// </summary>
 	/// <param name="landedObject">Landed object.</param>
-	void  ChangeScore( Transform landedObject )
+	private void  ChangeScore( Transform landedObject )
 	{
 		// Record the last landed object, so we can reset the player position when continuing after game over
 		lastLandedObject = landedObject;
@@ -636,7 +642,7 @@ public class GameController : MonoBehaviour {
 	/// Змінюєм розміри персонажа
 	/// </summary>
 	/// <param name="targetScale">Target scale.</param>
-	void RescalePlayer( float targetScale )
+	private void RescalePlayer( float targetScale )
 	{
 		if (playerObject)    playerObject.SendMessage("Rescale", targetScale);
 	}
@@ -698,7 +704,7 @@ public class GameController : MonoBehaviour {
 	/// <summary>
 	/// Зберыгаэм статистику в префаб
 	/// </summary>
-	void SaveStats()
+	private void SaveStats()
 	{
 		// Get the longest distance value from PlayerPrefs
 		longestDistance = PlayerPrefs.GetInt( "LongestDistance", longestDistance);
@@ -710,10 +716,17 @@ public class GameController : MonoBehaviour {
 		PlayerPrefs.SetInt("TotalPowerups", totalPowerups);
 	}
 
-    bool isShowingReward;
-    void OnApplicationFocus(bool focus)
+	private bool isShowingReward = false;
+
+	private void OnApplicationFocus(bool focus)
     {
-        if(!focus && isShowingReward)
-            MetricaController.Instance.ContinueAdsExit();
+	    if (!focus)
+	    {
+		    if(isShowingReward)
+				MetricaController.Instance.ContinueAdsExit();
+		    
+		    if(AdsProvider.Instance.isShowingInterstitial)
+			    MetricaController.Instance.InterstitialAdsFail();
+	    }
     }
 }

@@ -3973,6 +3973,7 @@ MonoBehaviour:
   textGameOver: {fileID: 1809790464}
   textHighScore: {fileID: 1018952567}
   textScore: {fileID: 1096441309}
+  bttnContinue: {fileID: 2088244087}
   deathLineHeight: -6
   playerAutoJump: 1
   powerups:
