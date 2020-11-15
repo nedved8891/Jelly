@@ -89,23 +89,26 @@ public class PlayerController : MonoBehaviour {
 		    rd.simulated = value;
 	}
 
-	void GetHat(){
-		switch (PlayerPrefs.GetInt ("Hat", 0)) {
-		case 1:
-			skltn.skeleton.SetAttachment ("Hat", "Hat5");
-			break;
-		case 2: 
-			skltn.skeleton.SetAttachment ("Hat", "Hat1");
-			break;
-		case 3:
-			skltn.skeleton.SetAttachment ("Hat", "Hat2");
-			break;
-		case 4:
-			skltn.skeleton.SetAttachment ("Hat", "Hat3");
-			break;
-		default:
-			skltn.skeleton.SetAttachment ("Hat", "Hat4");
-			break;
+	private void GetHat()
+	{
+		Debug.Log("@@@ HAT: " + PlayerPrefs.GetInt ("Hat", 0));
+		switch (PlayerPrefs.GetInt ("Hat", 0)) 
+		{
+			case 0:
+				skltn.skeleton.SetAttachment ("Hat", "Hat1");
+				break;
+			case 1: 
+				skltn.skeleton.SetAttachment ("Hat", "Hat2");
+				break;
+			case 2:
+				skltn.skeleton.SetAttachment ("Hat", "Hat3");
+				break;
+			case 3:
+				skltn.skeleton.SetAttachment ("Hat", "Hat4");
+				break;
+			default:
+				skltn.skeleton.SetAttachment ("Hat", "Hat5");
+				break;
 		}
 	}
 

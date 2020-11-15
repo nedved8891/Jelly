@@ -8,9 +8,11 @@ using BSH_Prototype;
 public class GameController : MonoBehaviour {
 
 	public delegate void Delegate();
+	public delegate void ShowPopUp(string value);
 	public static event Delegate OnStartGame;
 	public static event Delegate OnGameOver;
 	public static event Delegate OnGameRestart;
+	public static event ShowPopUp OnLevelUp;
 	public delegate void DelegatePause(bool value);
 	public static event DelegatePause OnPaused;
 
@@ -136,7 +138,8 @@ public class GameController : MonoBehaviour {
 	internal int currentPowerUpStreak = 0;
 	internal int longestPowerUpStreak = 0;
 
-
+	private bool newBestScore;
+	
 	void OnDisable(){
 		InitPool.OnInitPoolEnd -= OnStart;
 		InitPool.OnSpawnBG -= CreateBackground;
@@ -151,7 +154,7 @@ public class GameController : MonoBehaviour {
 		Instance = this;
 	}
 
-	void Start(){
+	private void Start(){
 		UpdateScore();
 
 		playerObject.gameObject.GetComponent<Rigidbody2D> ().simulated = false;
@@ -316,6 +319,8 @@ public class GameController : MonoBehaviour {
 
             ColumnController column = newColumn.GetComponent<ColumnController>();
 
+            column.GetComponent<Collider2D>().enabled = true;
+
             if (column.isDestroy)
             {
                 if (column.skltn)
@@ -371,6 +376,13 @@ public class GameController : MonoBehaviour {
 
 			LevelUp();
 		}
+
+		if (PlayerPrefs.HasKey("GameHighScore") && score > PlayerPrefs.GetInt("GameHighScore", 0) && !newBestScore)
+		{
+			newBestScore = true;
+			
+			OnLevelUp?.Invoke("Best Score");
+		}
 	}
 
 	/// <summary>
@@ -379,6 +391,9 @@ public class GameController : MonoBehaviour {
 	void LevelUp()
 	{
 		Debug.Log ("@@@ LevelUp");
+		
+		OnLevelUp?.Invoke("Level Up");
+		
 		// Increase the height range of the columns
 		columnHeightRange += columnHeightIncrease;
 
@@ -549,7 +564,11 @@ public class GameController : MonoBehaviour {
 					longestStreak = PlayerPrefs.GetInt( "LongestStreak", longestStreak);
 
 					// If the streak we passed is longer than the longest streak we passed, record it in the PlayerPrefs
-					if ( currentStreak > longestStreak )    PlayerPrefs.SetInt( "LongestStreak", currentStreak);
+					if (currentStreak > longestStreak)
+					{
+						OnLevelUp?.Invoke("New Streak");
+						PlayerPrefs.SetInt( "LongestStreak", currentStreak);
+					}
 
 					currentStreak = 0;
 
@@ -725,8 +744,9 @@ public class GameController : MonoBehaviour {
 		    if(isShowingReward)
 				MetricaController.Instance.ContinueAdsExit();
 		    
-		    if(AdsProvider.Instance.isShowingInterstitial)
-			    MetricaController.Instance.InterstitialAdsFail();
+		    if(AdsProvider.Instance)
+				if(AdsProvider.Instance.isShowingInterstitial)
+					MetricaController.Instance.InterstitialAdsFail();
 	    }
     }
 }

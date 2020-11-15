@@ -12,7 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a27903ac2c9c754b9f68751656a1eaa, type: 3}
   m_Name: AdSettingsData
   m_EditorClassIdentifier: 
-  mediationSettings: []
+  mediationSettings:
+  - advertiser: 0
+    advertiserName: Admob
+    bannerSettings:
+      adType: 1
+      orderAndroid: 1
+      orderiOS: 1
+      orderWindows: 1
+      weightAndroid: 1
+      weightiOS: 1
+      weightWindows: 1
+    interstitialSettings:
+      adType: 2
+      orderAndroid: 1
+      orderiOS: 1
+      orderWindows: 1
+      weightAndroid: 1
+      weightiOS: 1
+      weightWindows: 1
+    rewardedSettings:
+      adType: 3
+      orderAndroid: 1
+      orderiOS: 1
+      orderWindows: 1
+      weightAndroid: 1
+      weightiOS: 1
+      weightWindows: 1
   advertiserSettings:
   - advertiser: 2
     useSDK: 0
@@ -64,7 +90,7 @@ MonoBehaviour:
       hasRewarded: 1
       directedForChildren: 0
   - advertiser: 0
-    useSDK: 0
+    useSDK: 1
     preprocessorDirective: USE_ADMOB
     sdkLink: https://github.com/googleads/googleads-mobile-unity/releases
     platformSettings:

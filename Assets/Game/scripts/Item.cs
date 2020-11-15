@@ -45,13 +45,14 @@ public class Item : MonoBehaviour {
 			//If there is a playerprefs record and a value change, change it
 			if ( playerPrefsName != string.Empty && playerPrefsValue != 0 )
 			{
+				Debug.Log("playerPrefsName: " + playerPrefsName);
 				//Get the current value of the player prefs record
 				float tempValue = PlayerPrefs.GetFloat( playerPrefsName, 0);
-
+				Debug.Log("tempValue: " + tempValue);
 				//Update the record with the new value
 				PlayerPrefs.SetFloat( playerPrefsName, tempValue + playerPrefsValue);
-
-				action ();
+				Debug.Log("playerPrefsValue: " + playerPrefsValue);
+				action?.Invoke();
 			}
 
 			//If there is a hit effect, create it
