@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Fons
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 41cb8563fd859594d916b649512921d9, type: 3}
+    - {fileID: 2800000, guid: c0be63553c726a7448afc6205e434a31, type: 3}
+    - {fileID: 2800000, guid: da8ab1564d9117f42b3cba799d5dfd2a, type: 3}
+    - {fileID: 2800000, guid: f9bfcaee3d60b664b94a339077edd707, type: 3}
+    - {fileID: 2800000, guid: 9289fd25dddc1ee4daaa1e9913d6f233, type: 3}
+    - {fileID: 2800000, guid: f16c441bd7aed844c84ba9b024c46489, type: 3}
+    - {fileID: 2800000, guid: 448060b7df422a9429a0c87b47f1ff78, type: 3}
+    - {fileID: 2800000, guid: 31a465e7eb69a684bb2965334a486cc8, type: 3}
+    - {fileID: 2800000, guid: 1525f4be0a7b0f147baff7d7e384113c, type: 3}
+    - {fileID: 2800000, guid: b5ee05d757f58554ca1187b15c33bb81, type: 3}
+    - {fileID: 2800000, guid: 3f31428f56bc26548b4f4edfb8902b27, type: 3}
+    - {fileID: 2800000, guid: 40e4709c3adbd4e4aa0898f0ec263876, type: 3}
+    - {fileID: 2800000, guid: 0897c9553d1fa184f912ef99d96cfebd, type: 3}
+    - {fileID: 2800000, guid: 057c08501ca4f9f479c2485590f7ff6f, type: 3}
+    - {fileID: 2800000, guid: 208d5361cc071314fb79ce65f1e98916, type: 3}
+    totalSpriteSurfaceArea: 31457280
+    bindAsDefault: 1
+    storedHash:
+      serializedVersion: 2
+      Hash: 8f8025dffb78410a51d144750d32e803
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 057c08501ca4f9f479c2485590f7ff6f, type: 3}
+  - {fileID: 21300000, guid: 208d5361cc071314fb79ce65f1e98916, type: 3}
+  - {fileID: 21300000, guid: 41cb8563fd859594d916b649512921d9, type: 3}
+  - {fileID: 21300000, guid: 9289fd25dddc1ee4daaa1e9913d6f233, type: 3}
+  - {fileID: 21300000, guid: c0be63553c726a7448afc6205e434a31, type: 3}
+  - {fileID: 21300000, guid: 0897c9553d1fa184f912ef99d96cfebd, type: 3}
+  - {fileID: 21300000, guid: da8ab1564d9117f42b3cba799d5dfd2a, type: 3}
+  - {fileID: 21300000, guid: 448060b7df422a9429a0c87b47f1ff78, type: 3}
+  - {fileID: 21300000, guid: b5ee05d757f58554ca1187b15c33bb81, type: 3}
+  - {fileID: 21300000, guid: 31a465e7eb69a684bb2965334a486cc8, type: 3}
+  - {fileID: 21300000, guid: f16c441bd7aed844c84ba9b024c46489, type: 3}
+  - {fileID: 21300000, guid: 40e4709c3adbd4e4aa0898f0ec263876, type: 3}
+  - {fileID: 21300000, guid: 1525f4be0a7b0f147baff7d7e384113c, type: 3}
+  - {fileID: 21300000, guid: f9bfcaee3d60b664b94a339077edd707, type: 3}
+  - {fileID: 21300000, guid: 3f31428f56bc26548b4f4edfb8902b27, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 4
+  - 5
+  - 1 a
+  - 5 a
+  - 2 a
+  - 3
+  - 3 a
+  - 2b
+  - 5b
+  - 3b
+  - 1 b
+  - 2
+  - 4b
+  - 4 a
+  - 1
+  m_Tag: Fons
+  m_IsVariant: 0
