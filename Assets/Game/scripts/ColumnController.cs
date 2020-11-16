@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 using DG.Tweening;
 using Spine;
+using Random = UnityEngine.Random;
 
 public class ColumnController : MonoBehaviour {
 	[Header("Скелетон")]
@@ -31,7 +33,7 @@ public class ColumnController : MonoBehaviour {
 	// The vertical movement speed of the column
 	public float moveSpeed = 1;
 
-    void Start()
+	private void Start()
 	{
 		thisTransform = transform;
 
@@ -44,7 +46,7 @@ public class ColumnController : MonoBehaviour {
 		coll = GetComponent<BoxCollider2D> ();
 	}
 
-	void Update()
+	private void Update()
 	{
 		if ( movingColumn )
 		{
@@ -53,40 +55,38 @@ public class ColumnController : MonoBehaviour {
 		}
 	}
 
-	//Detect when the player lands on this column
-	void  OnCollisionEnter2D(Collision2D coll)
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-		//If the player lands on top of this column, and the column hasn't been landed on yet, you can land on it
-		if ( coll.gameObject.tag == "Player" && coll.transform.position.y > thisTransform.position.y )    
+		if ( other.gameObject.CompareTag("Player") && other.transform.position.y > thisTransform.position.y )    
 		{
-			//The player has landed
-			coll.gameObject.SendMessage("PlayerLanded");
+			other.gameObject.SendMessage("PlayerLanded");
 
-			//Give a bonus to the player
-			if ( giveBonus == true )    coll.gameObject.SendMessage("ChangeScore", thisTransform);
-
+			if ( giveBonus == true )    other.gameObject.SendMessage("ChangeScore", thisTransform);
+			
 			if (isDestroy)
 				Destroy ();
 
 			giveBonus = false;
 
-			// Attach the player to this column
-			coll.transform.parent = thisTransform;
+			other.transform.parent = thisTransform;
 		}
 	}
 
 	//Don't give bonus when landing on this column
-	void  NoBonus()
+	private void  NoBonus()
 	{
 		giveBonus = false;
 	}
 
-	void  IsDestroy()
+	private void  IsDestroy(bool value)
 	{
-		isDestroy = true;
+		isDestroy = value;
+		
+		if(skltn)
+			skltn.state.SetAnimation (0, "Idle", true);
 	}
 
-	void Destroy(float _delay = 2){
+	private void Destroy(float _delay = 2){
 		DOVirtual.DelayedCall (_delay, ()=>{
 			if(skltn)
 				skltn.state.SetAnimation (0, "Destroy", false);

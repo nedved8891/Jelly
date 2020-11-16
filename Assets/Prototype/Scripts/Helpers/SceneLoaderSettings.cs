@@ -34,7 +34,7 @@ namespace BSH_Prototype
 			Scenes.InitScene,
 			Scenes.Logo,
 
-			//Scenes.Game,
+			Scenes.Game,
 			Scenes.MainMenu
 		};
 	}

@@ -38,7 +38,7 @@ MonoBehaviour:
     rewardValue: 3
   - dayTexture: {fileID: 21300000, guid: bb1bb16000ce4084684792bb75d1efa3, type: 3}
     rewardValue: 4
-  - dayTexture: {fileID: 21300000, guid: f80af2f4d6c31324ab3d78ba5294b8a1, type: 3}
+  - dayTexture: {fileID: 21300000, guid: b451d550686c37c429de845cd8a5e3c9, type: 3}
     rewardValue: 5
   usePlaymaker: 0
   useBolt: 0

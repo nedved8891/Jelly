@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void  Start()
+	private void  Start()
 	{
 		PlayAnimation("IdleJump", true);
 
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour {
 		if ( GameObject.FindGameObjectWithTag(soundSourceTag) )    soundSource = GameObject.FindGameObjectWithTag(soundSourceTag);
 	}
 
-	void  Update()
+	private void  Update()
 	{
 		if ( isDead == false )
 		{
@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour {
 	/// Добавляє очки, викликаючи метод в ігровому контроллері
 	/// </summary>
 	/// <param name="landedObject">Landed object.</param>
-	void  ChangeScore(Transform landedObject)
+	private void  ChangeScore(Transform landedObject)
 	{
 		gameController.SendMessage("ChangeScore", landedObject);
 	}
@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour {
 	/// <summary>
 	/// Метод видаляє гравця і спрацьовує трігер кінця гри
 	/// </summary>
-	void  Die()
+	private void  Die()
 	{
 		if ( isDead == false )
 		{
@@ -214,7 +214,7 @@ public class PlayerController : MonoBehaviour {
 	/// <summary>
 	/// Метод, який запускається при початку набирання сили стрибка
 	/// </summary>
-	void StartJump( bool playerAutoJump ){
+	private void StartJump( bool playerAutoJump ){
 		if ( isDead == false )
 		{
 			autoJump = playerAutoJump;
@@ -248,7 +248,7 @@ public class PlayerController : MonoBehaviour {
 	/// <summary>
 	/// Метод, що запускається при завершенні вибору сили стрибка
 	/// </summary>
-	void  EndJump(){
+	private void  EndJump(){
 		if ( isDead == false )
 		{
 			//You can only jump if you are on land, and you already charged up the jump power ( jump start )
@@ -291,7 +291,7 @@ public class PlayerController : MonoBehaviour {
 	/// <summary>
 	/// Метод, який запускається при приземленні на платформу
 	/// </summary>
-	void  PlayerLanded()
+	private void  PlayerLanded()
 	{
 		isLanded = true;
 
@@ -314,7 +314,7 @@ public class PlayerController : MonoBehaviour {
 	/// <summary>
 	/// Метод, який запускається при ілеальному приземленні на платформу
 	/// </summary>
-	void  PerfectLanding(int streak)
+	private void  PerfectLanding(int streak)
 	{
 		//Play the perfect landing particle effect
 		if ( perfectEffect )    perfectEffect.Play();
@@ -324,7 +324,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	//This function rescales this object over time
-	IEnumerator Rescale( float targetScale )
+	private IEnumerator Rescale( float targetScale )
 	{
 		//Perform the scaling action for 1 second
 		float scaleTime = 1;

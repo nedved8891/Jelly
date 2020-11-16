@@ -145,12 +145,12 @@ public class GameController : MonoBehaviour {
 		InitPool.OnSpawnBG -= CreateBackground;
 	}
 
-	void OnEnable(){
+	private void OnEnable(){
 		InitPool.OnInitPoolEnd += OnStart;
 		InitPool.OnSpawnBG += CreateBackground;
 	}
 
-	void Awake(){
+	private void Awake(){
 		Instance = this;
 	}
 
@@ -207,7 +207,7 @@ public class GameController : MonoBehaviour {
 		EndJump();
 	}
 
-	void  Update()
+	private void  Update()
 	{
 		if (isGameOver == true) {
 			if ( Input.GetButtonDown(confirmButton) )
@@ -252,7 +252,7 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	void  SetPlayer( int playerNumber )
+	private void  SetPlayer( int playerNumber )
 	{
 		Debug.Log ("Потім тут має бути встановлення шапок");
 	}
@@ -271,19 +271,18 @@ public class GameController : MonoBehaviour {
 	}
 	#endregion //Jump
 
-	void OnStart(){
+	private void OnStart()
+	{
 		CreateColumn (precreateColumns, true);
 //		CreateBackground (3);
 	}
 
-	void CreateBackground( int columnCount = 0 ){
+	private void CreateBackground( int columnCount = 0 ){
 		while (columnCount > 0) 
 		{
 			columnCount--;
 
-			Transform newColumn;
-
-			newColumn = InitPool.Instance.Spawn (GetType (4, 13), nextBackgroundPosition);
+			InitPool.Instance.Spawn (GetType (4, 13), nextBackgroundPosition);
 
 			nextBackgroundPosition.x += 20.44f;
 		}
@@ -292,14 +291,14 @@ public class GameController : MonoBehaviour {
 	/// <summary>
 	/// Функція створення columns
 	/// </summary>
-	void CreateColumn ( int columnCount = 0, bool giveBonus = false)
+	private void CreateColumn ( int columnCount = 0, bool giveBonus = false)
 	{
 		//Create a few columns at the start of the game
 		while ( columnCount > 0 )
 		{
 			columnCount--;
 
-			int randomColumn = 0;
+			var randomColumn = 0;
 
 			Transform newColumn;
 
@@ -312,20 +311,13 @@ public class GameController : MonoBehaviour {
 				newColumn = InitPool.Instance.Spawn (GetType(0, 2), nextColumnPosition);
 			}
 
-            if (Random.value < destroyColumnChance)
-            {
-                newColumn.SendMessage("IsDestroy");
-            }
+            newColumn.SendMessage("IsDestroy", Random.value < destroyColumnChance);
 
-            ColumnController column = newColumn.GetComponent<ColumnController>();
+            var column = newColumn.GetComponent<ColumnController>();
 
+            column.giveBonus = true;
+            
             column.GetComponent<Collider2D>().enabled = true;
-
-            if (column.isDestroy)
-            {
-                if (column.skltn)
-                    column.skltn.state.SetAnimation(0, "Idle", true);
-            }
 
 			// Record the first column we land on
 			if ( giveBonus == false )    lastLandedObject = newColumn;
@@ -358,15 +350,15 @@ public class GameController : MonoBehaviour {
 	/// <summary>
 	/// Отримуєм тип, для створення колони
 	/// </summary>
-	PoolType GetType(int _min, int _max){
-		int k = Random.Range (_min, _max + 1);
+	private PoolType GetType(int _min, int _max){
+		var k = Random.Range (_min, _max + 1);
 		return (PoolType)k;
 	}
 
 	/// <summary>
 	/// Оновлення рахунку
 	/// </summary>
-	void UpdateScore()
+	private void UpdateScore()
 	{
 		if ( scoreText )    scoreText.GetComponent<Text>().text = score.ToString();
 
@@ -388,7 +380,7 @@ public class GameController : MonoBehaviour {
 	/// <summary>
 	/// Піднімаєм левел
 	/// </summary>
-	void LevelUp()
+	private void LevelUp()
 	{
 		Debug.Log ("@@@ LevelUp");
 		
@@ -415,7 +407,7 @@ public class GameController : MonoBehaviour {
 	/// Змінюєм множник очків x2
 	/// </summary>
 	/// <param name="setValue">Set value.</param>
-	void SetScoreMultiplier( int setValue )
+	private void SetScoreMultiplier( int setValue )
 	{
 		scoreMultiplier = setValue;
 	}
@@ -572,6 +564,7 @@ public class GameController : MonoBehaviour {
 
 					currentStreak = 0;
 
+					Debug.Log("score +=" + landingBonuses[index].bonusValue + " " +  scoreMultiplier);
 					//Add the bonus to the score
 					score += landingBonuses[index].bonusValue * scoreMultiplier;
 
