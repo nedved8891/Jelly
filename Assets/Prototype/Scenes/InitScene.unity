@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac5d45804607f445a73a73559ddfc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeShow: 86400
   notificationsManager: {fileID: 826290510}
 --- !u!1001 &1073728728
 PrefabInstance:

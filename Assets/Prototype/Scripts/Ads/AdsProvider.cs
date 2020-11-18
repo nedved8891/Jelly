@@ -112,7 +112,8 @@ public class AdsProvider : MonoBehaviour {
 
 	public void ShowRewardedAd(UnityAction<bool, string> CompleteMethod)
 	{
-		if (Advertisements.Instance.IsRewardVideoAvailable ()) {
+		if (Advertisements.Instance.IsRewardVideoAvailable ()) 
+		{
 			Advertisements.Instance.ShowRewardedVideo (CompleteMethod);
 		} else {
 			Debug.Log ("@@@ Відео реклама недоступна, просто перейдем на наступну сцену");

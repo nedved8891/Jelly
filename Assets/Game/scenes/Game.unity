@@ -4184,7 +4184,7 @@ MonoBehaviour:
   - {fileID: 4435507600991786, guid: 23ddfecbc6a9a4146b4daf4837283a91, type: 3}
   itemRate: 2
   movingColumnChance: 0.25
-  destroyColumnChance: 0.25
+  destroyColumnChance: 0.9
   columnGapRange: {x: 3, y: 7.5}
   columnHeightRange: {x: -2.5, y: -2.5}
   PointDestroy: {fileID: 1718705700}
@@ -4208,7 +4208,7 @@ MonoBehaviour:
   textHighScore: {fileID: 1018952567}
   textScore: {fileID: 1096441309}
   bttnContinue: {fileID: 2088244087}
-  deathLineHeight: -6
+  deathLineHeight: -10
   playerAutoJump: 1
   powerups:
   - startFunction: SetScoreMultiplier

@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using BSH_Prototype;
+using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour {
 
@@ -228,7 +230,7 @@ public class GameController : MonoBehaviour {
 			//If there is a player object, you can make it jump, the background moves in a loop.
 			if ( playerObject )
 			{
-				if ( cameraObject )
+				if ( cameraObject)
 				{
 					//Make the camera chase the player in all directions
 					cameraObject.GetComponent<Rigidbody2D>().velocity = new Vector2((playerObject.position.x - cameraObject.position.x + 3) * cameraSpeed, cameraObject.GetComponent<Rigidbody2D>().velocity.y);
@@ -459,23 +461,45 @@ public class GameController : MonoBehaviour {
 
 	public void Continue()
 	{
-		if ( continues > 0 )
+		if (continues <= 0) return;
+
+		if (lastLandedObject)
 		{
-			// Reset the player to its last position
+			var column = lastLandedObject.GetComponent<ColumnController>();
+			if (column)
+			{
+				if (column.coll)
+					column.coll.enabled = true;
+
+				if (column.skltn)
+					column.skltn.state.SetAnimation(0, "Idle", true);
+			}
+		}
+
+		if (playerObject)
+		{
 			playerObject.position = lastLandedObject.position + new Vector3(0, 10, 0);
-			Debug.Log ("::::" +playerObject.position);
 
-			// Reset the player's dead status
 			playerObject.SendMessage("NotDead");
+		}
 
-			// Continue the game
-			isGameOver = false;
+		isGameOver = false;
 
-			// Show the game screen and hide the game over screen
-			if ( gameCanvas )    gameCanvas.gameObject.SetActive(true);
-			if ( gameOverCanvas )    gameOverCanvas.gameObject.SetActive(false);
+		if ( gameCanvas )    
+			gameCanvas.gameObject.SetActive(true);
+		
+		if ( gameOverCanvas )    
+			gameOverCanvas.gameObject.SetActive(false);
 
-			ChangeContinues(-1);
+		ChangeContinues(-1);
+	}
+
+	private void FixedUpdate()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			continues = 1;
+			Continue();
 		}
 	}
 
@@ -603,7 +627,7 @@ public class GameController : MonoBehaviour {
 	/// </summary>
 	/// <returns>The over.</returns>
 	/// <param name="delay">Delay.</param>
-	IEnumerator GameOver(float delay)
+	private IEnumerator GameOver(float delay)
 	{
 		//Go through all the powerups and nullify their timers, making them end
 		for (var index = 0 ; index < powerups.Length ; index++ )

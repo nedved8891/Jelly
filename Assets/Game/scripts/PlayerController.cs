@@ -70,17 +70,19 @@ public class PlayerController : MonoBehaviour {
 	internal bool  isFalling = false;
 
 	[Header("Чи помер гравець?")]
-	internal bool isDead = false;
+	public bool isDead = false;
 
 	public Rigidbody2D rd;
 
 	void OnDisable(){
 		GameController.OnPaused -= _OnPaused;
+		GameController.OnGameOver -= Die;
 		HatsScript.SwitchHat -= GetHat;
 	}
 
 	void OnEnable(){
 		GameController.OnPaused += _OnPaused;
+		GameController.OnGameOver += Die;
 		HatsScript.SwitchHat += GetHat;
 	}
 
@@ -186,6 +188,9 @@ public class PlayerController : MonoBehaviour {
 	{
 		if ( isDead == false )
 		{
+			rd.velocity = Vector2.zero;
+			rd.simulated = false;
+			
 			//Call the game over function from the game controller
 			gameController.SendMessage("GameOver", 0.5f);
 
@@ -209,6 +214,8 @@ public class PlayerController : MonoBehaviour {
 	public void NotDead()
 	{
 		isDead = false;
+		
+		rd.simulated = true;
 	}
 
 	/// <summary>

@@ -11,7 +11,8 @@ public class ColumnController : MonoBehaviour {
 	[Header("Скелетон")]
 	public SkeletonAnimation skltn;
 
-	BoxCollider2D coll;
+	[HideInInspector]
+	public BoxCollider2D coll;
 
 	internal Transform thisTransform;
 
